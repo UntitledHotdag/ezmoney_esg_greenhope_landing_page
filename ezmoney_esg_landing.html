@@ -256,6 +256,32 @@ const DATA = {
 
   activities: [
     {
+      id:"walk4000", img:"assets/act-walk4000.png", name:"每日步行 4,000 步", tag:"新增", reward:"每次 $20",
+      oneliner:"通勤多走一段，當日累積 4,000 步。",
+      desc:"通勤多走一段、午休散步、提早一站下車，當日累積 4,000 步即可參加。",
+      rule:"每日限 1 次 · 每人活動期間至多 10 次",
+      photo:"截圖手機健康 App／手環當日步數畫面，需清楚顯示當日日期與步數。",
+      tip:"用手機內建健康 App 就能計步，截圖記得看得到「日期」！",
+      qa:[
+        ["要用哪個 App？","iPhone 用「健康」、Android 用「Samsung Health」等內建 App 或手環 App 皆可，需顯示當日日期與步數。"],
+        ["步數分次累積可以嗎？","可以，當日累計達標即可。"],
+        ["截圖看不到日期怎麼辦？","請確保截圖含當日日期，否則無法通過審核。"],
+        ["和 8,000 步能同一天各領一次嗎？","每日建議擇一申請，避免同段步數重複計獎（依正式公告為準）。"]
+      ]
+    },
+    {
+      id:"walk8000", img:"assets/act-walk8000.png", name:"每日步行 8,000 步", tag:"新增", reward:"每次 $40",
+      oneliner:"進階挑戰，當日累積 8,000 步。",
+      desc:"挑戰更進階的每日 8,000 步，養成穩定運動習慣，替健康與減碳加分。",
+      rule:"每日限 1 次 · 每人活動期間至多 10 次",
+      photo:"截圖手機健康 App／手環當日步數畫面，需清楚顯示當日日期與步數達 8,000 步。",
+      tip:"分多次走完也沒關係，當日累計到 8,000 步截圖即可！",
+      qa:[
+        ["和 4,000 步可以同一天各領一次嗎？","每日建議擇一申請，避免同段步數重複計獎（依正式公告為準）。"],
+        ["中途分多次走完可以嗎？","可以，當日累計達標即可。"]
+      ]
+    },
+    {
       id:"transport", img:"assets/act-transport.png", name:"大眾運輸上班行動", tag:"保留", reward:"每次 $30",
       oneliner:"搭捷運、公車上下班，通勤也能減碳。",
       desc:"搭乘捷運、公車等大眾運輸上下班，取代自行駕車，降低通勤碳排。上班或下班皆可參加。",
@@ -283,33 +309,7 @@ const DATA = {
       ]
     },
     {
-      id:"walk4000", img:"assets/act-walk4000.png", name:"每日步行 4,000 步", tag:"新增", reward:"每次 $20",
-      oneliner:"通勤多走一段，當日累積 4,000 步。",
-      desc:"通勤多走一段、午休散步、提早一站下車，當日累積 4,000 步即可參加。",
-      rule:"每日限 1 次 · 每人活動期間至多 10 次",
-      photo:"截圖手機健康 App／手環當日步數畫面，需清楚顯示當日日期與步數。",
-      tip:"用手機內建健康 App 就能計步，截圖記得看得到「日期」！",
-      qa:[
-        ["要用哪個 App？","iPhone 用「健康」、Android 用「Samsung Health」等內建 App 或手環 App 皆可，需顯示當日日期與步數。"],
-        ["步數分次累積可以嗎？","可以，當日累計達標即可。"],
-        ["截圖看不到日期怎麼辦？","請確保截圖含當日日期，否則無法通過審核。"],
-        ["和 8,000 步能同一天各領一次嗎？","每日建議擇一申請，避免同段步數重複計獎（依正式公告為準）。"]
-      ]
-    },
-    {
-      id:"walk8000", img:"assets/act-walk8000.png", name:"每日步行 8,000 步", tag:"新增", reward:"每次 $40",
-      oneliner:"進階挑戰，當日累積 8,000 步。",
-      desc:"挑戰更進階的每日 8,000 步，養成穩定運動習慣，替健康與減碳加分。",
-      rule:"每日限 1 次 · 每人活動期間至多 10 次",
-      photo:"截圖手機健康 App／手環當日步數畫面，需清楚顯示當日日期與步數達 8,000 步。",
-      tip:"分多次走完也沒關係，當日累計到 8,000 步截圖即可！",
-      qa:[
-        ["和 4,000 步可以同一天各領一次嗎？","每日建議擇一申請，避免同段步數重複計獎（依正式公告為準）。"],
-        ["中途分多次走完可以嗎？","可以，當日累計達標即可。"]
-      ]
-    },
-    {
-      id:"bag", img:"assets/act-bag.png", name:"袋袋箱傳", tag:"限時", reward:"每次 $30",
+      hidden:true, id:"bag", img:"assets/act-bag.png", name:"袋袋箱傳", tag:"限時", reward:"每次 $30",
       oneliner:"把乾淨袋子帶來公司，循環再利用。",
       desc:"把家裡乾淨堪用的紙袋、提袋帶到公司指定地點，讓袋子循環再利用、減少一次性包材浪費。",
       rule:"限時 8/17–8/28 · 每日限 1 次（依正式公告）",
@@ -452,7 +452,7 @@ $('#steps').innerHTML = DATA.joinSteps.map((s,i)=>{
   </div>`;
 }).join("");
 
-$('#actList').innerHTML = DATA.activities.map((a,i)=>{
+$('#actList').innerHTML = DATA.activities.filter(a=>!a.hidden).map((a,i)=>{
   const acc=ACC[i%ACC.length];
   const qa=a.qa.map(([q,ans])=>`<div class="item"><div class="q"><span>Q</span>${esc(q)}</div><div class="a">${esc(ans)}</div></div>`).join("");
   return `<details class="act reveal" id="act-${esc(a.id)}" style="--acc:${acc}">
@@ -501,7 +501,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* 支援用網址直達特定活動卡片，例如 ...頁面#act-transport（transport / cup / walk4000 / walk8000 / bag）*/
+/* 支援用網址直達特定活動卡片，例如 ...頁面#act-transport（walk4000 / walk8000 / transport / cup）*/
 function openFromHash(){
   const h=location.hash;
   if(h && h.indexOf('#act-')===0){
