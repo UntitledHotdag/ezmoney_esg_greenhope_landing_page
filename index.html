@@ -210,6 +210,17 @@ footer .fbrand{font-weight:800;color:#fff;font-size:17px;margin-bottom:6px}
 footer .meta{font-size:13.5px;opacity:.9}
 footer .rule{width:44px;height:4px;background:var(--gold2);border-radius:4px;margin:0 auto 18px}
 footer .tiny{margin-top:14px;font-size:12px;opacity:.6}
+footer .notice{margin:22px auto 0;max-width:640px;text-align:left;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);border-radius:var(--r);overflow:hidden}
+footer .notice summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+  padding:14px 18px;font-weight:800;font-size:14px;color:#fff}
+footer .notice summary::-webkit-details-marker{display:none}
+footer .notice summary:focus-visible{outline:2px solid var(--gold2);outline-offset:-2px}
+footer .notice summary .chev{margin-left:auto;flex:none;color:#cfe8d2;transition:transform .22s}
+footer .notice[open] summary .chev{transform:rotate(180deg)}
+footer .notice ol{margin:0;padding:0 18px 16px 32px;font-size:12.5px;line-height:1.85;color:#cfe8d2;opacity:.9}
+footer .notice ol li{margin-bottom:8px}
+footer .notice ol li:last-child{margin-bottom:0}
 
 /* ===== about / background ===== */
 .about-lead{max-width:64ch;font-size:16.5px;color:var(--ink-soft);margin:0 0 8px}
@@ -263,7 +274,7 @@ const DATA = {
   activityPeriod: "2026 / 07 / 20 – 09 / 20",
   heroTitleTop: "把綠色習慣",
   heroTitleHL: "變成每天的事",
-  heroSub: "上班通勤、喝杯飲料、走幾步路——順手做，拍張照，就能拿獎勵金。一起讓永續成為日常！",
+  heroSub: "喝杯飲料、走幾步路——順手做，拍張照，就能拿獎勵金。一起讓永續成為日常！",
 
   about: {
     title: "為什麼有這個活動？",
@@ -398,7 +409,26 @@ const DATA = {
     ["獎勵金怎麼提領？","在全民碳集「我的 → 碳集錢包」申請提領，並設定領款銀行帳戶。"]
   ],
 
-  contact:"活動有任何問題，歡迎聯繫公司永續活動窗口。"
+  contact:"活動有任何問題，歡迎聯繫公司永續活動窗口。",
+
+  notice:[
+    "本活動僅限統一投信在職員工參與，非本公司員工之申請將不予審核通過。",
+    "「統一投信」品牌會員之資格審核時間為每週二、每週四。審核以審核當日16:00前提交的申請為準，逾時之資格審核則順延至下一個審核日。",
+    "同仁可於隔日，即週三或週五，自行至平台「品牌會員」頁面確認資格審核結果。",
+    "同仁上傳之各項活動申請，將固定於每週一由合作單位「股感媒體」依活動規則進行審核。審核以審核當日16:00前提交的申請為準，逾時之資格審核則順延至下一個審核日。",
+    "您可於審核日隔日（週二）至碳集錢包中查看審核成果。",
+    "各項活動總名額以活動任務頁面為準，活動獎勵採先申請者先獲得，額滿即止。",
+    "活動審核通過後，對應之永續獎勵金將自動存入您在全民碳集中的「碳集錢包」中，查看路徑為【我的→碳集錢包】。",
+    "碳集獎勵金的領取、提領、兌換與折抵規則，一律以「全民碳集：美麗系統」平台內的操作規定為主。",
+    "獎勵金提領（銀行）：當您的獎勵金累積達 100 元以上，即可至【我的→碳集錢包→提領】填寫銀行帳戶申請提領。",
+    "每月25日以前申請的獎勵金提領（銀行）將於當月30日以前匯款至申請銀行帳戶，25日後申請之提領將順延至下個月撥款。",
+    "獎勵金提領（全盈支付）：您可以將全民碳集帳戶與全盈支付帳戶綁定，最低只需 1 元即可自動提領碳集獎勵金至全盈支付帳戶中。",
+    "您於本活動中所提領的獎金，將由全民碳集平台方（市民永續股份有限公司）申報為您的其他所得（代號：92）。",
+    "三大員工永續活動（大眾運輸上班、自帶杯加碼行動、無廢用餐行動）的活動期間為2026年7月20日起至2026年9月20日止。",
+    "若您在註冊、帳號綁定、照片上傳或錢包操作上面臨任何系統技術問題，歡迎加入「全民碳集：美麗城市」官方 LINE 帳號（ID：@tanji.greenhope）線上詢問。",
+    "若對活動定義、進度或活動內容有疑問，歡迎聯繫營運服務處（待補充）。",
+    "主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將另行公告。"
+  ]
 };
 </script>
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -501,6 +531,10 @@ const DATA = {
   <div class="fbrand">統一投信 員工永續活動</div>
   <div class="meta">活動期間 <span class="num" id="footPeriod"></span></div>
   <div class="meta" id="footContact" style="margin-top:4px"></div>
+  <details class="notice">
+    <summary>活動注意事項<svg class="ic chev"><use href="#i-chev"/></svg></summary>
+    <ol id="footNotice"></ol>
+  </details>
   <div class="tiny">STOCKFEEL × 統一投信</div>
 </footer>
 
@@ -514,6 +548,7 @@ $('#heroSub').textContent = DATA.heroSub;
 $('#period').textContent = DATA.activityPeriod;
 $('#footPeriod').textContent = DATA.activityPeriod;
 $('#footContact').textContent = DATA.contact;
+$('#footNotice').innerHTML = DATA.notice.map(t=>`<li>${esc(t)}</li>`).join("");
 
 /* about / background */
 $('#aboutTitle').textContent = DATA.about.title;
@@ -598,7 +633,9 @@ function openFromHash(){
     const el=document.querySelector(h);
     if(el && el.tagName==='DETAILS'){
       el.open=true;
-      setTimeout(()=>el.scrollIntoView({behavior:'auto',block:'start'}),80);
+      const jump=()=>el.scrollIntoView({behavior:'instant',block:'start'});
+      requestAnimationFrame(()=>requestAnimationFrame(jump));
+      window.addEventListener('load',jump,{once:true});
     }
   }
 }
