@@ -232,8 +232,11 @@ footer .notice ol li:last-child{margin-bottom:0}
 .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
 .flow .node{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);
   padding:18px 16px;box-shadow:var(--sh1)}
-.flow .node .k{width:34px;height:34px;border-radius:10px;background:var(--bg-grad);color:#0f3a17;font-weight:800;
-  font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.flow .node .k{width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(150deg,var(--teal),var(--deep));color:#fff;font-weight:800;
+  font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  box-shadow:0 5px 12px rgba(28,94,34,.32),inset 0 1px 1px rgba(255,255,255,.35);
+  border:3px solid var(--paper-2)}
 .flow .node h4{margin:0 0 3px;font-size:15.5px;font-weight:800;color:var(--ink)}
 .flow .node p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55}
 .flow .sep{display:flex;align-items:center;color:var(--teal)}
@@ -303,46 +306,46 @@ const DATA = {
     {
       id:"walk4000", img:"assets/act-walk4000.png", name:"每日步行 4,000 步", tag:"新增", reward:"每次 $20",
       oneliner:"通勤多走一段，當日累積 4,000 步。",
-      desc:"把運動融入日常，從每天 4,000 步開始！通勤多走一段、午休散個步、下班提早一站下車，輕鬆累積步數，既顧健康又減少對交通工具的依賴。步行達標後請於隔天上傳步數截圖。若步數已達 7,000 步，請改申請「每日步行 7,000 步」活動，超過 7,000 步的紀錄申請本活動將不予通過。",
+      desc:"把運動融入日常，從每天 4,000 步開始！通勤多走一段、午休散個步、下班提早一站下車，輕鬆累積步數，既顧健康又減少對交通工具的依賴。請每天上傳「前一天」的步數截圖。若步數已達 7,000 步，請改申請「每日步行 7,000 步」活動，超過 7,000 步的紀錄申請本活動將不予通過。",
       rule:"每日限申請 1 次 · 每月 400 名",
-      photo:"步行達標隔天，上傳手機健康 App／步數 App 的步數截圖，需清楚顯示日期與步數超過 4,000 步。",
+      photo:"每天上傳「前一天」手機健康 App／步數 App 的步數截圖。截圖需清楚顯示日期與步數超過 4,000 步。",
       examples:[
         {img:"assets/ex-act-walk4000-1.png", caption:"iPhone「健康」App 步數畫面，清楚顯示日期與步數"}
       ],
-      tip:"步數可分次累積，記得於隔天上傳，截圖看得到日期與步數就完成！",
+      tip:"步數可分次累積，記得每天上傳「前一天」的截圖，看得到日期與步數就完成！",
       qa:[
-        ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示當日日期與步數。"],
-        ["步數是分次累積的可以嗎？","可以，當日累計達標即可。"],
-        ["截圖看不到日期怎麼辦？","請確保截圖包含步行日期（或顯示為昨天），且日期需於活動期間內，否則無法通過審核。"],
+        ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示前一天的日期與步數。"],
+        ["步數是分次累積的可以嗎？","可以，我們累計一整天的步數，鼓勵大家從早到晚多多走路，並請在隔天上傳前一天的截圖。"],
+        ["截圖看不到日期怎麼辦？","請確保截圖包含前一天的步行日期（或顯示為昨天），且日期需於活動期間內，否則無法通過審核。"],
         ["同一天同時達 4,000 與 7,000 步，兩個活動都能申請嗎？","僅能擇一申請，若以超過 7,000 步的紀錄申請本活動，將不予通過。"],
         ["使用 iPhone 的話，如何找到步數？","開啟內建「健康」App，於「摘要」頁點選「步數卡片」即可查看；若摘要未顯示，可從「瀏覽 → 健身 → 步數」查看。"],
         ["使用 Google（Android）手機的話，如何找到步數？","開啟「Google Fit」App，首頁即可看到「步數」；若已改用「Google Health」，請於「Today／今日」分頁查看。"],
         ["使用三星手機的話，如何找到步數？","開啟「Samsung Health」App，於首頁點選「步數卡片」即可查看。"],
         ["Android 手機沒有內建步數功能怎麼辦？","可至 Google 商店下載「計步器」App 使用。"],
-        ["要走完的當天上傳嗎？還是可以隔一天上傳？","為了避免與其他步行活動重複審核，請於步行結束後的隔天上傳，請勿上傳當天步數。"],
+        ["要走完的當天上傳嗎？還是可以隔一天上傳？","為幫助大家方便結算一整天的步數，統一於「隔天」上傳前一天的步數截圖。請勿直接上傳當天步數或重複上傳。"],
         ["週末也可以參加嗎？","可以，為了鼓勵同仁多走路維持健康，活動期間每天都能參加。"]
       ]
     },
     {
       id:"walk7000", img:"assets/act-walk7000.png", name:"每日步行 7,000 步", tag:"新增", reward:"每次 $40",
       oneliner:"進階挑戰，當日累積 7,000 步。",
-      desc:"挑戰更進階的每日 7,000 步！比 4,000 步再多走一點，養成穩定的運動習慣，替健康加碼、也替減碳加分。步行達標後請於隔天上傳步數截圖。",
+      desc:"挑戰更進階的每日 7,000 步！比 4,000 步再多走一點，養成穩定的運動習慣，替健康加碼、也替減碳加分。請每天上傳「前一天」的步數截圖。",
       rule:"每日限申請 1 次 · 每月 200 名",
-      photo:"步行達標隔天，上傳手機健康 App／步數 App 的步數截圖，需清楚顯示日期與步數達 7,000 步。",
+      photo:"每天上傳「前一天」手機健康 App／步數 App 的步數截圖。截圖需清楚顯示日期與步數超過 7,000 步。",
       examples:[
         {img:"assets/ex-act-walk7000-1.png", caption:"步數達 7,000 步以上的截圖範例"}
       ],
-      tip:"分多次走完也沒關係，記得於隔天上傳累積到 7,000 步的截圖！",
+      tip:"分多次走完也沒關係，記得每天上傳「前一天」累積到 7,000 步的截圖！",
       qa:[
-        ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示當日日期與步數。"],
-        ["步數是分次累積的可以嗎？","可以，當日累計達標即可。"],
-        ["截圖看不到日期怎麼辦？","請確保截圖包含步行日期（或顯示為昨天），且日期需於活動期間內，否則無法通過審核。"],
+        ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示前一天的日期與步數。"],
+        ["步數是分次累積的可以嗎？","可以，我們累計一整天的步數，鼓勵大家從早到晚多多走路，並請在隔天上傳前一天的截圖。"],
+        ["截圖看不到日期怎麼辦？","請確保截圖包含前一天的步行日期（或顯示為昨天），且日期需於活動期間內，否則無法通過審核。"],
         ["同一天同時達 4,000 與 7,000 步，兩個活動都能申請嗎？","僅能擇一申請，若以超過 7,000 步的紀錄申請 4,000 步活動，將不予通過。"],
         ["使用 iPhone 的話，如何找到步數？","開啟內建「健康」App，於「摘要」頁點選「步數卡片」即可查看；若摘要未顯示，可從「瀏覽 → 健身 → 步數」查看。"],
         ["使用 Google（Android）手機的話，如何找到步數？","開啟「Google Fit」App，首頁即可看到「步數」；若已改用「Google Health」，請於「Today／今日」分頁查看。"],
         ["使用三星手機的話，如何找到步數？","開啟「Samsung Health」App，於首頁點選「步數卡片」即可查看。"],
         ["Android 手機沒有內建步數功能怎麼辦？","可至 Google 商店下載「計步器」App 使用。"],
-        ["要走完的當天上傳嗎？還是可以隔一天上傳？","為了避免與其他步行活動重複審核，請於步行結束後的隔天上傳，請勿上傳當天步數。"],
+        ["要走完的當天上傳嗎？還是可以隔一天上傳？","為幫助大家方便結算一整天的步數，統一於「隔天」上傳前一天的步數截圖。請勿直接上傳當天步數或重複上傳。"],
         ["週末也可以參加嗎？","可以，為了鼓勵同仁多走路維持健康，活動期間每天都能參加。"]
       ]
     },
@@ -443,7 +446,7 @@ const DATA = {
       <a href="#activities">活動介紹</a>
       <a href="#faq">常見問答</a>
     </nav>
-    <a class="join" href="#start">加入活動<svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+    <a class="join" href="#start">加入會員<svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
   </div>
 </header>
 
@@ -523,6 +526,9 @@ const DATA = {
       <p class="sec-sub">還沒加入？照著這幾步做，就能開始參加活動。</p>
     </div>
     <div class="steps" id="steps"></div>
+    <div style="margin-top:22px;text-align:center">
+      <a class="btn-primary" href="https://beautifulcity.greenhope.link/" target="_blank" rel="noopener noreferrer">前往全民碳集<svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
   </div>
 </section>
 
