@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>統一投信 員工永續活動</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232E8B4E'/%3E%3Cpath d='M11 19A6 6 0 0 1 5 13c0-4 3-8 13-8 0 10-3 14-7 14Z' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 19c1.6-5 5-7.5 9.5-9' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 /* =====================================================================
    樣式（版面設計）— 一般維護不需要改這一區
@@ -171,7 +172,7 @@ svg.ic{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;str
 .field{margin-top:14px}
 .field .lab{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--green);margin-bottom:3px}
 .field .lab svg{width:15px;height:15px}
-.field .val{font-size:15px;color:var(--ink-soft)}
+.field .val{font-size:15px;color:var(--ink-soft);white-space:pre-line}
 .examples{display:flex;gap:14px;margin-top:4px;flex-wrap:wrap}
 .ex{width:132px}
 .ex .shot{position:relative;width:100%;aspect-ratio:9/16;border-radius:12px;overflow:hidden;
@@ -307,12 +308,12 @@ const DATA = {
       id:"walk4000", img:"assets/act-walk4000.png", name:"每日步行 4,000 步", tag:"新增", reward:"每次 $20",
       oneliner:"通勤多走一段，當日累積 4,000 步。",
       desc:"把運動融入日常，從每天 4,000 步開始！通勤多走一段、午休散個步、下班提早一站下車，輕鬆累積步數，既顧健康又減少對交通工具的依賴。請每天上傳「前一天」的步數截圖。若步數已達 7,000 步，請改申請「每日步行 7,000 步」活動，超過 7,000 步的紀錄申請本活動將不予通過。",
-      rule:"每日限申請 1 次 · 每月 400 名",
+      rule:"每日限申請 1 次\n每月申請上限400名/次",
       photo:"每天上傳「前一天」手機健康 App／步數 App 的步數截圖。截圖需清楚顯示日期與步數超過 4,000 步。",
       examples:[
         {img:"assets/ex-act-walk4000-1.png", caption:"iPhone「健康」App 步數畫面，清楚顯示日期與步數"}
       ],
-      tip:"步數可分次累積，記得每天上傳「前一天」的截圖，看得到日期與步數就完成！",
+      tip:"可累積一整天從早到晚的步數，記得每天上傳「前一天」的截圖，看得到日期與步數就完成！",
       qa:[
         ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示前一天的日期與步數。"],
         ["步數是分次累積的可以嗎？","可以，我們累計一整天的步數，鼓勵大家從早到晚多多走路，並請在隔天上傳前一天的截圖。"],
@@ -330,12 +331,12 @@ const DATA = {
       id:"walk7000", img:"assets/act-walk7000.png", name:"每日步行 7,000 步", tag:"新增", reward:"每次 $40",
       oneliner:"進階挑戰，當日累積 7,000 步。",
       desc:"挑戰更進階的每日 7,000 步！比 4,000 步再多走一點，養成穩定的運動習慣，替健康加碼、也替減碳加分。請每天上傳「前一天」的步數截圖。",
-      rule:"每日限申請 1 次 · 每月 200 名",
+      rule:"每日限申請 1 次\n每月申請上限200名/次",
       photo:"每天上傳「前一天」手機健康 App／步數 App 的步數截圖。截圖需清楚顯示日期與步數超過 7,000 步。",
       examples:[
         {img:"assets/ex-act-walk7000-1.png", caption:"步數達 7,000 步以上的截圖範例"}
       ],
-      tip:"分多次走完也沒關係，記得每天上傳「前一天」累積到 7,000 步的截圖！",
+      tip:"可累積一整天從早到晚的步數，記得每天上傳「前一天」的截圖，看得到日期與步數就完成！",
       qa:[
         ["要用哪一個 App？","手機內建健康 App（iPhone「健康」／Android「Google Fit」或「Google Health」）或第三方步數 App 皆可，畫面需顯示前一天的日期與步數。"],
         ["步數是分次累積的可以嗎？","可以，我們累計一整天的步數，鼓勵大家從早到晚多多走路，並請在隔天上傳前一天的截圖。"],
@@ -371,7 +372,7 @@ const DATA = {
       id:"cup", img:"assets/act-cup.png", name:"自帶杯加碼行動", tag:"保留", reward:"每次 $25",
       oneliner:"自備環保杯買飲料，少用一個一次性杯。",
       desc:"少用一個一次性飲料杯，就少一份垃圾。購買飲料時自備環保杯，把減塑變成每天的小習慣，拍下裝有飲料的環保杯與購買店家即可申請。",
-      rule:"每日限申請 1 次 · 每月 400 名",
+      rule:"每日限申請 1 次 每月 400 名",
       photo:"拍攝以環保杯盛裝飲料、並可看到購買店家的照片；不接受空杯或一次性杯。",
       examples:[
         {img:"assets/ex-cup-1.png", caption:"環保杯裝著飲料，並可看到購買店家"}
@@ -416,20 +417,19 @@ const DATA = {
 
   notice:[
     "本活動僅限統一投信在職員工參與，非本公司員工之申請將不予審核通過。",
-    "「統一投信」品牌會員之資格審核時間為每週二、每週四。審核以審核當日16:00前提交的申請為準，逾時之資格審核則順延至下一個審核日。",
-    "同仁可於隔日，即週三或週五，自行至平台「品牌會員」頁面確認資格審核結果。",
+    "「統一投信」品牌會員之資格需經審核，同仁註冊後約一個工作日，可自行至平台「品牌會員」頁面確認資格審核結果。資格審核如有問題可聯繫重安。",
+    "若您在註冊、帳號綁定、照片上傳或錢包操作上面臨任何系統技術問題，歡迎加入「全民碳集：美麗城市」官方 LINE 帳號（ID：@tanji.greenhope）線上詢問。",
     "同仁上傳之各項活動申請，將固定於每週一由合作單位「股感媒體」依活動規則進行審核。審核以審核當日16:00前提交的申請為準，逾時之資格審核則順延至下一個審核日。",
     "您可於審核日隔日（週二）至碳集錢包中查看審核成果。",
     "各項活動總名額以活動任務頁面為準，活動獎勵採先申請者先獲得，額滿即止。",
     "活動審核通過後，對應之永續獎勵金將自動存入您在全民碳集中的「碳集錢包」中，查看路徑為【我的→碳集錢包】。",
     "碳集獎勵金的領取、提領、兌換與折抵規則，一律以「全民碳集：美麗系統」平台內的操作規定為主。",
-    "獎勵金提領（銀行）：當您的獎勵金累積達 100 元以上，即可至【我的→碳集錢包→提領】填寫銀行帳戶申請提領。",
+    "獎勵金提領（銀行）： 當您的獎勵金累積達 100 元以上，即可至【我的→碳集錢包→提領】填寫銀行帳戶申請提領。",
     "每月25日以前申請的獎勵金提領（銀行）將於當月30日以前匯款至申請銀行帳戶，25日後申請之提領將順延至下個月撥款。",
-    "獎勵金提領（全盈支付）：您可以將全民碳集帳戶與全盈支付帳戶綁定，最低只需 1 元即可自動提領碳集獎勵金至全盈支付帳戶中。",
+    "獎勵金提領（全盈支付）： 您可以將全民碳集帳戶與全盈支付帳戶綁定，最低只需 1 元即可自動提領碳集獎勵金至全盈支付帳戶中。",
     "您於本活動中所提領的獎金，將由全民碳集平台方（市民永續股份有限公司）申報為您的其他所得（代號：92）。",
-    "三大員工永續活動（大眾運輸上班、自帶杯加碼行動、無廢用餐行動）的活動期間為2026年7月20日起至2026年9月20日止。",
-    "若您在註冊、帳號綁定、照片上傳或錢包操作上面臨任何系統技術問題，歡迎加入「全民碳集：美麗城市」官方 LINE 帳號（ID：@tanji.greenhope）線上詢問。",
-    "若對活動定義、進度或活動內容有疑問，歡迎聯繫營運服務處（待補充）。",
+    "活動期間為2026年7月20日起至2026年9月20日止。",
+    "若對活動定義、進度或活動內容有疑問，歡迎聯繫營運服務處 重安(分機869)或 愷羚(分機870)。",
     "主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將另行公告。"
   ]
 };
@@ -523,7 +523,7 @@ const DATA = {
     <div class="head reveal">
       <span class="eyebrow"><svg class="ic"><use href="#i-spark"/></svg>如何加入會員</span>
       <h2 class="sec-title">3 分鐘加入，開始拿獎勵</h2>
-      <p class="sec-sub">還沒加入？照著這幾步做，就能開始參加活動。</p>
+      <p class="sec-sub">還沒加入？照著這幾步做，就能開始參加活動。（備註：帳號需經人工審核確認員工身分，約一個工作日）</p>
     </div>
     <div class="steps" id="steps"></div>
     <div style="margin-top:22px;text-align:center">
