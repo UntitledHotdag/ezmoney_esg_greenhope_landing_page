@@ -154,6 +154,8 @@ svg.ic{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;str
 .act .banner .rb{position:absolute;top:12px;right:14px;display:inline-flex;align-items:center;gap:5px;
   font-size:14px;font-weight:800;color:var(--gold-ink);background:rgba(255,255,255,.92);padding:5px 12px;border-radius:var(--pill);box-shadow:var(--sh1)}
 .act .banner .rb b{color:var(--gold)}
+.act .banner .full{position:absolute;top:50px;right:14px;display:inline-flex;align-items:center;gap:5px;
+  font-size:13px;font-weight:800;color:#fff;background:#D32F2F;padding:5px 12px;border-radius:var(--pill);box-shadow:var(--sh1)}
 .act .bar{display:flex;align-items:center;gap:14px;padding:15px 20px}
 .act .head2{flex:1;min-width:0}
 .act .row1{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
@@ -307,7 +309,7 @@ const DATA = {
     {
       id:"walk4000", img:"assets/act-walk4000.png", name:"每日步行 4,000 步", tag:"新增", reward:"每次 $20",
       oneliner:"通勤多走一段，當日累積 4,000 步。",
-      desc:"把運動融入日常，從每天 4,000 步開始！通勤多走一段、午休散個步、下班提早一站下車，輕鬆累積步數，既顧健康又減少對交通工具的依賴。請每天上傳「前一天」的步數截圖。若步數已達 7,000 步，請改申請「每日步行 7,000 步」活動，超過 7,000 步的紀錄申請本活動將不予通過。",
+      desc:"把運動融入日常，從每天 4,000 步開始！通勤多走一段、午休散個步、下班提早一站下車，輕鬆累積步數，既顧健康又減少對交通工具的依賴。<s>請每天上傳「前一天」的步數截圖。若步數已達 7,000 步，請改申請「每日步行 7,000 步」活動，超過 7,000 步的紀錄申請本活動將不予通過。</s> <span style=\"color:#D32F2F;font-weight:700\">「每日步行 7,000 步」活動名額目前已額滿，步數超過 7,000 步的同仁，可在「每日步行 4,000 步」活動額滿前，先改申請本活動。</span>",
       rule:"每日限申請 1 次\n每月申請上限400名/次",
       photo:"每天上傳「前一天」手機健康 App／步數 App 的步數截圖。截圖需清楚顯示日期與步數超過 4,000 步。",
       examples:[
@@ -328,7 +330,7 @@ const DATA = {
       ]
     },
     {
-      id:"walk7000", img:"assets/act-walk7000.png", name:"每日步行 7,000 步", tag:"新增", reward:"每次 $40",
+      id:"walk7000", img:"assets/act-walk7000.png", name:"每日步行 7,000 步", tag:"新增", reward:"每次 $40", soldOut:true,
       oneliner:"進階挑戰，當日累積 7,000 步。",
       desc:"挑戰更進階的每日 7,000 步！比 4,000 步再多走一點，養成穩定的運動習慣，替健康加碼、也替減碳加分。請每天上傳「前一天」的步數截圖。",
       rule:"每日限申請 1 次\n每月申請上限200名/次",
@@ -590,6 +592,7 @@ $('#actList').innerHTML = DATA.activities.filter(a=>!a.hidden).map((a,i)=>{
       <div class="banner">
         <img src="${esc(a.img)}" alt="" onerror="this.style.display='none'">
         <span class="rb"><svg class="ic" style="width:15px;height:15px;stroke:var(--gold)"><use href="#i-gift"/></svg>${esc(a.reward)}</span>
+        ${a.soldOut?`<span class="full">目前已額滿</span>`:""}
       </div>
       <div class="bar">
         <div class="head2">
@@ -603,7 +606,7 @@ $('#actList').innerHTML = DATA.activities.filter(a=>!a.hidden).map((a,i)=>{
     </summary>
     <div class="body">
       <div class="divider"></div>
-      <div class="field"><span class="lab"><svg class="ic"><use href="#i-leaf"/></svg>活動說明</span><div class="val">${esc(a.desc)}</div></div>
+      <div class="field"><span class="lab"><svg class="ic"><use href="#i-leaf"/></svg>活動說明</span><div class="val">${a.desc}</div></div>
       <div class="field"><span class="lab"><svg class="ic"><use href="#i-spark"/></svg>參加規則</span><div class="val">${esc(a.rule)}</div></div>
       <div class="field"><span class="lab"><svg class="ic"><use href="#i-check"/></svg>照片怎麼拍</span><div class="val">${esc(a.photo)}</div></div>
       ${examples?`<div class="field"><span class="lab"><svg class="ic"><use href="#i-cam"/></svg>範例照片</span><div class="examples">${examples}</div></div>`:""}
