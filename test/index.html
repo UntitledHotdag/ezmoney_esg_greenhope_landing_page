@@ -193,7 +193,7 @@ svg.ic{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;str
 .qa .item:first-child{border-top:none}
 .qa .q{font-weight:800;font-size:14.5px;color:var(--ink);display:flex;gap:7px}
 .qa .q span{color:var(--acc);font-weight:800}
-.qa .a{font-size:14.5px;color:var(--muted);margin-top:3px;padding-left:18px}
+.qa .a{font-size:14.5px;color:var(--muted);margin-top:3px;padding-left:18px;white-space:pre-line}
 
 /* ===== faq ===== */
 .faq{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh1)}
@@ -388,24 +388,21 @@ const DATA = {
       ]
     },
     {
-      id:"bag", img:"../assets/act-bag.png", name:"袋袋箱傳", tag:"限時", reward:"每次 $30",
-      oneliner:"把乾淨袋子帶來公司，循環再利用。",
-      desc:"家裡囤了一堆紙袋、提袋嗎？把乾淨堪用的袋子帶到公司，讓袋子循環再利用、減少一次性包材的浪費。每次至少捐贈 10 個紙袋，未滿 10 個將無法通過申請。捐贈時間為活動期間每日 13:00–17:30，請直接找 Kelly 或 Kay 捐贈，拍下捐贈的照片即可申請。",
-      rule:"限時 8/24–9/4 · 每次至少捐贈 10 個紙袋 · 每日限申請 1 次 · 每月 200 名",
-      photo:"經 Kelly 或是 Kay 確認合格後，再拍攝紙袋的照片，需可清楚辨識捐贈數量。",
+      id:"bag", img:"../assets/act-bag.png", name:"袋袋箱傳（8/24–9/4）", tag:"限時", reward:"每次 $30",
+      oneliner:"把乾淨紙袋帶來公司，循環再利用。",
+      desc:"家裡囤了一堆紙袋嗎？把乾淨堪用的紙袋帶到公司，讓紙袋循環再利用、減少一次性包材的浪費。本活動將協助蒐集同仁捐贈的紙袋，透過環境部資源循環署媒合平台，捐贈給需要的商家單位。",
+      rule:"8/24–9/4 活動時間，每日 13:30–17:30\n每次參與須捐贈 10 個符合條件的紙袋（註），每日皆可申請一次。總名額 200 名/次。\n\n註：紙袋須經現場審核是否符合捐贈條件，請見下方「常見問答」。",
+      photo:"請帶紙袋、手機，到 10 樓營運服務處重安（#869）的座位。經檢查符合捐贈條件後，將會現場提供統一投信「袋袋箱傳」圖卡，即可拍照上傳平台。",
       examples:[
         {img:"../assets/ex-bag-1.png", caption:"乾淨堪用、數量達標的紙袋"}
       ],
-      tip:"記得在活動期間每日 13:00–17:30，準備至少 10 個乾淨紙袋，經 Kelly／Kay 確認沒問題再拍照上傳！",
       qa:[
-        ["什麼尺寸的袋子可以捐？","建議捐贈尺寸適中（適合盛裝小吃、飲品或零售商品）；過大或過小的紙袋都不宜。"],
-        ["捐贈的袋子狀況需要符合什麼標準嗎？","袋子的材質與結構要完整，不可以有提把處斷裂或袋體破損的狀況；袋內外需乾淨無異物、液體殘留，且未裝過農藥、強效化學品或生鮮魚肉。"],
-        ["什麼袋子都可以捐嗎？","本次活動只開放捐贈紙袋。"],
-        ["哪些袋子不適合捐贈？","有以下狀況的紙袋將無法通過審核，捐贈前請自行檢查：①清潔衛生：袋內外有明顯汙漬、異味、食物殘留，或受潮、發霉、變質。②結構完好：提把斷裂、袋身底部漏底或明顯破損、材質老化脆化，或有嚴重皺褶、大面積撕裂傷。③安全分類：曾裝過農藥、強效化學品或生鮮魚肉、有生鮮血水滲漏風險，或尺寸過大過小、不適合盛裝小吃、飲品或零售商品。"],
-        ["每次捐贈需要提供幾個紙袋？","每次捐贈需至少 10 個紙袋，未滿 10 個將無法參加活動。"],
-        ["如何算是捐贈成功？","將紙袋提供給 Kelly 與 Kay 後，由負責同仁確認紙袋狀況可接受後即是捐贈成功。"],
-        ["活動照片該如何拍攝？","經同仁確認紙袋狀況沒問題後，請拍攝紙袋照片，並且照片需可辨識捐贈數量。"],
-        ["要交給誰確認？","請於活動期間每日 13:00–17:30，直接找 Kelly 或 Kay 捐贈確認。"]
+        ["什麼袋子都可以捐嗎？","本次活動只開放捐贈「紙袋」，不接受塑膠袋或非紙袋類型的購物袋。"],
+        ["什麼尺寸的紙袋可以捐？","請捐贈尺寸適中（定義：適合盛裝小吃、飲品或零售商品）的紙袋；過大或過小的紙袋都不宜。"],
+        ["哪些紙袋不適合捐贈？","有以下狀況的紙袋，將無法符合現場檢查的捐贈條件：\n1. 衛生問題：有明顯汙漬、異味、食物殘留，或受潮、發霉、變質。\n2. 結構問題：提把斷裂、袋身底部漏底或明顯破損、材質老化脆化，或有嚴重皺褶、大面積撕裂傷。\n3. 安全問題：曾裝過農藥、強效化學品或生鮮魚肉、生鮮血水等。"],
+        ["每次捐贈需要提供幾個紙袋？","・每次參加需捐贈 10 個紙袋，如未滿 10 個，建議累計湊滿 10 個後，再一併提供。\n・因活動期間每天只可參加一次，如果您有超過 10 個紙袋，可以每天帶 10 個紙袋來捐贈。\n（小提醒：因紙袋須現場檢查是否符合捐贈條件，建議可多帶 1–2 個備用）"],
+        ["紙袋要交給誰？如何算是捐贈成功？","請於活動期間每日 13:30–17:30，攜帶紙袋、手機，到 10 樓營運服務處重安（#869）的座位捐贈。經檢查符合後，現場將提供「袋袋箱傳」標示，進行拍照和上傳。"],
+        ["紙袋後續將會如何利用？","公司將透過環境部資源循環署「袋袋箱傳」平台，與台北市有需求的商家單位進行媒合並捐贈。您的捐贈不僅響應循環再利用，也將幫助公司對外發揮正面影響力！"]
       ]
     }
   ],
@@ -612,7 +609,7 @@ $('#actList').innerHTML = DATA.activities.filter(a=>!a.hidden).map((a,i)=>{
       <div class="field"><span class="lab"><svg class="ic"><use href="#i-spark"/></svg>參加規則</span><div class="val">${esc(a.rule)}</div></div>
       <div class="field"><span class="lab"><svg class="ic"><use href="#i-check"/></svg>照片怎麼拍</span><div class="val">${esc(a.photo)}</div></div>
       ${examples?`<div class="field"><span class="lab"><svg class="ic"><use href="#i-cam"/></svg>範例照片</span><div class="examples">${examples}</div></div>`:""}
-      <div class="tip"><svg class="ic"><use href="#i-cam"/></svg><div><b>拍照小技巧：</b>${esc(a.tip)}</div></div>
+      ${a.tip?`<div class="tip"><svg class="ic"><use href="#i-cam"/></svg><div><b>拍照小技巧：</b>${esc(a.tip)}</div></div>`:""}
       <div class="field"><span class="lab"><svg class="ic"><use href="#i-check"/></svg>常見問答</span><div class="qa">${qa}</div></div>
     </div>
   </details>`;
